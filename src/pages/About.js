@@ -9,7 +9,6 @@ const About = ({location, match}) => {
 
     return (
         <div>
-            <SideBar/>
             <h2>About {match.params.name}</h2>
             <p>{detail && 'detail: blahblah'}</p>
         </div>

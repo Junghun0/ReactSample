@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import List from '@material-ui/core/List';
 
 import Home from '../pages/Home';
 import About from '../pages/About';
@@ -11,7 +12,6 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Menu/>
                     <Route exact paht="/" component={Home}/>
                     <Switch>
                         <Route path="/about/:name" component={About}/>
