@@ -11,6 +11,9 @@ import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
+import Box from '@material-ui/core/Box';
+import SearchIcon from '@material-ui/icons/Search';
+import { positions } from '@material-ui/system';
 import {makeStyles} from '@material-ui/core/styles';
 
 
@@ -82,14 +85,28 @@ export const secondaryListItems = (
             </ListItemIcon>
             <ListItemText primary="Friend 5"/>
         </ListItem>
+        <ListItem button>
+            <ListItemIcon>
+                <PeopleIcon/>
+            </ListItemIcon>
+            <ListItemText primary="Friend 5"/>
+        </ListItem>
     </div>
 );
 
 export const thirdListItems = (
     <div>
-        <Fab mx="auto" aria-label="Add" size="small" style={{background: '#5a656a'}}>
-            <AddIcon style={{color: '#eaf8fc'}}/>
-        </Fab>
+        <Box display="flex" justifyContent="center" m={1} p={1} alignItems="flex-end">
+            <Fab mx="auto" aria-label="Add" size="small" style={{background: '#5a656a'}}>
+                <AddIcon style={{color: '#eaf8fc'}}/>
+            </Fab>
+        </Box>
+
+        <Box display="flex" justifyContent="center" m={1} p={1} alignItems="flex-end">
+            <Fab mx="auto" aria-label="Add" size="small" style={{background: '#5a656a'}}>
+                <SearchIcon style={{color: '#eaf8fc'}}/>
+            </Fab>
+        </Box>
 
     </div>
 );
