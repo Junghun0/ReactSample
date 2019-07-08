@@ -13,9 +13,6 @@ import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import Box from '@material-ui/core/Box';
 import SearchIcon from '@material-ui/icons/Search';
-import { positions } from '@material-ui/system';
-import {makeStyles} from '@material-ui/core/styles';
-
 
 export const mainListItems = (
     <div>
