@@ -1,0 +1,10 @@
+.button {
+    background-color: #007bff;
+    font-size: 20px;
+    width: 80%;
+    margin: 20px;
+
+}
+.input {
+    display: none;
+}
