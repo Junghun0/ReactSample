@@ -16,9 +16,11 @@ import { Link } from 'react-router-dom';
 
 const styles = theme => ({
     paper: {
+
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
+      
     },
     form: {
       width: '100%',
@@ -32,7 +34,7 @@ class SignIn extends Component{
       const { classes } = this.props;
 
       return(
-          <Container component="main" maxWidth="xs">
+          <Container component="main" maxWidth="xs" style={{marginTop: '20%'}}>
           <CssBaseline />
           <div className={classes.paper}>
             <Avatar className={classes.avatar}>
@@ -100,6 +102,7 @@ class SignIn extends Component{
       );
   }
 }
+
 SignIn.propTypes = {
   classes: PropTypes.object.isRequired,
 };

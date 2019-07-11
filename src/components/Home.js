@@ -20,6 +20,7 @@ import { withStyles } from '@material-ui/styles';
 import PropTypes from 'prop-types';
 import FileUpload from './FileUpload';
 import LeftDrawer from './LeftDrawer';
+import ChatInput from './ChatInput';
 
 const drawerWidth = 240;
 
@@ -82,6 +83,7 @@ const styles = theme => ({
         flexGrow: 1,
         height: '100vh',
         overflow: 'auto',
+        marginTop: 100
     },
     container: {
         
@@ -126,13 +128,7 @@ class Home extends Component{
 
     render(){
         const { classes } = this.props;
-        // const [open, setOpen] = useState(false);
-        // const handleDrawerOpen = () => {
-        //     setOpen(true);
-        // };
-        // const handleDrawerClose = () => {
-        //     setOpen(false);
-        // };
+
         const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
     
         return(
@@ -164,23 +160,29 @@ class Home extends Component{
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
-                    <Grid container spacing={3}>
+                    <Grid container spacing={4}>
 
                         <Grid item xs={12} md={8} lg={9}>
                             <Paper className={fixedHeightPaper}>
-
+                                Grid First
                             </Paper>
                         </Grid>
 
                         <Grid item xs={12} md={4} lg={3}>
                             <Paper className={fixedHeightPaper}>
-
+                                Grid Second
                             </Paper>
                         </Grid>
 
-                        <Grid item xs={12}>
+                        <Grid item xs={12} lg={6}>
                             <Paper className={classes.paper}>
-                                <FileUpload/>
+                                <ChatInput/>
+                            </Paper>
+                        </Grid>
+
+                        <Grid item xs={12} md={6}>
+                            <Paper>
+                                Grid Third
                             </Paper>
                         </Grid>
                     </Grid>
