@@ -39,7 +39,6 @@ class ChatInput extends Component {
     return (
       <div>
         <flexbox claaName={classes.box}>
-          
           <flexbox className={classes.centerbox} style={{height: "350px", width: "100%"}}>
             <Container style={{backgroundColor: '#232529', height: "100%", width: "100%"}}>
                 <Container style={{backgroundColor: '#262626', height:"100%", width: "80%"}}>

@@ -13,14 +13,13 @@ import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 const styles = theme => ({
     paper: {
-
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      
     },
     form: {
       width: '100%',
@@ -30,6 +29,42 @@ const styles = theme => ({
 });
 
 class SignIn extends Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      username: "",
+      password: "",
+      grant_type: "password"
+    }
+  }
+  
+  handleChange = event => {
+    this.setState({ username: event.target.value });
+    console.log('value1',event.target.value);
+  }
+
+  handleChange2 = event => {
+    this.setState({ password: event.target.value });
+    console.log('value2',event.target.value);
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const user = {
+      username: this.state.username,
+      password: this.state.password,
+      grant_type: this.state.grant_type
+    };
+
+    axios.post(`http://localhost:8080/oauth/token`, { user })
+      .then(res => {
+        console.log(res.access_token);
+      })
+  }
+
+  
   render(){
       const { classes } = this.props;
 
@@ -52,8 +87,8 @@ class SignIn extends Component{
                 id="email"
                 label="Email Address"
                 name="email"
-                autoComplete="email"
                 autoFocus
+                onChange={this.handleChange}
               />
               <TextField
                 variant="outlined"
@@ -64,7 +99,7 @@ class SignIn extends Component{
                 label="Password"
                 type="password"
                 id="password"
-                autoComplete="current-password"
+                onChange={this.handleChange2}
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
@@ -76,6 +111,7 @@ class SignIn extends Component{
                   fullWidth
                   variant="contained"
                   color="primary"
+                  onClick={this.handleSubmit}
                   className={classes.submit}
                 >
                 Sign In
