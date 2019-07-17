@@ -21,6 +21,7 @@ import PropTypes from 'prop-types';
 import FileUpload from './FileUpload';
 import LeftDrawer from './LeftDrawer';
 import ChatInput from './ChatInput';
+import ChattingForm from './ChattingForm';
 
 const drawerWidth = 240;
 
@@ -182,7 +183,7 @@ class Home extends Component{
 
                         <Grid item xs={12} md={6}>
                             <Paper>
-                                Grid Third
+                                <ChattingForm/>
                             </Paper>
                         </Grid>
                     </Grid>

@@ -33,19 +33,18 @@ class SignIn extends Component{
   constructor(props){
     super(props);
     this.state = {
-      username: "",
-      password: "",
-      grant_type: "password"
+      userId: "",
+      userPassword: ""
     }
   }
   
   handleChange = event => {
-    this.setState({ username: event.target.value });
+    this.setState({ userId: event.target.value });
     console.log('value1',event.target.value);
   }
 
   handleChange2 = event => {
-    this.setState({ password: event.target.value });
+    this.setState({ userPassword: event.target.value });
     console.log('value2',event.target.value);
   }
 
@@ -53,14 +52,16 @@ class SignIn extends Component{
     event.preventDefault();
 
     const user = {
-      username: this.state.username,
-      password: this.state.password,
-      grant_type: this.state.grant_type
+      userId: this.state.userId,
+      userPassword: this.state.userPassword,
     };
 
-    axios.post(`http://localhost:8080/oauth/token`, { user })
+    axios.post('http://localhost:8080/signin', { user , header: {
+      'Content-Type': 'application/json'
+    }
+  })
       .then(res => {
-        console.log(res.access_token);
+        console.log(res);
       })
   }
 
@@ -110,7 +111,7 @@ class SignIn extends Component{
                   fullWidth
                   variant="contained"
                   color="primary"
-                  onClick={this.handleSubmit}
+                  // onClick={this.handleSubmit}
                   className={classes.submit}
                 >
                 Sign In

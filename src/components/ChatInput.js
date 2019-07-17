@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/styles';
 import { spacing } from '@material-ui/system';
 import FileUpload from './FileUpload';
+import Box from '@material-ui/core/Box';
 
 const styles = theme => ({
     box: {
@@ -20,11 +21,10 @@ const styles = theme => ({
         display: 'flex'
     },
     input: {
-        $inputHeight: 42,
-        width: 100,
-        height: 100,
+        
     },
     inputbox:{
+        width: '100%',
         alignItems: 'baseline',
         backgroundColor: '#f5f5f5',
         flexDirection: 'row',
@@ -47,11 +47,33 @@ class ChatInput extends Component {
             </Container>
           </flexbox>
           <flexbox className={classes.inputbox}>
+            <flexbox justifyContent="flex-start">
             <FileUpload/>
-            <InputBase className={classes.input} autoFocus={true} style={{width: "90%", height: "60%", backgroundColor: "#c7c7c7"}}/>
+            </flexbox>
+            
+            <flexbox justifyContent="center" width="90%">
+            <InputBase/>
+            </flexbox>
+            
+            <flexbox justifyContent="flex-end">
             <SendButton/>
+            </flexbox>
+            
           </flexbox>
         </flexbox>
+        <div style={{ width: '100%' }}>
+      <Box display="flex" p={1} bgcolor="background.paper">
+        <Box p={0.5} bgcolor="grey.300" alignContent="center">
+          <FileUpload/>
+        </Box>
+        <Box p={1} flexGrow={1} bgcolor="grey.500" alignContent="center">
+          <InputBase/>
+        </Box>
+        <Box p={1}  bgcolor="grey.300" alignContent="center">
+          <SendButton/>
+        </Box>
+      </Box>
+    </div>
       </div>
     );
   }
