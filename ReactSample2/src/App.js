@@ -5,6 +5,7 @@ import Gugudan from './Gugudan';
 import WordRelay from './WordRelay';
 import BaseBall from './BaseBall';
 import RenderTest from './RenderTest';
+import ResponseCheck from './ResponseCheck';
 
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
         <WordRelay/>
         <BaseBall/>
         <RenderTest/>
+        <ResponseCheck/>
       </div>
     );
   }
