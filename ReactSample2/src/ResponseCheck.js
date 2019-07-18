@@ -44,6 +44,12 @@ class ResponseCheck extends Component {
     }
   };
 
+  onReset = () => {
+      this.setState({
+          result: [],
+      });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -62,6 +68,7 @@ class ResponseCheck extends Component {
             ms
           </div>
         )}
+        <button onClick={this.onReset}>Reset</button>
       </React.Fragment>
     );
   }
