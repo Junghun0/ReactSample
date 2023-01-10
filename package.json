@@ -20,7 +20,7 @@
     "react-fa-icon": "^0.1.4",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "0.9.x",
+    "react-scripts": "5.0.x",
     "recharts": "^1.6.2"
   },
   "devDependencies": {
